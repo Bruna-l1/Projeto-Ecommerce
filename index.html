@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Trabalho DIW - API </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+<body onload="init(), exibirFavoritos()">
+  <!-- Biblioteca JavaScript necessária para alguns efeitos do bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Início da barra de navegação superior -->
+  <nav class="navbar navbar-light" style="background-color:  #5fabde 80% ">
+    <div class="container">
+      <a href="#">
+        <img src="img/logo2-removebg-preview.png" width="200" alt="">
+      </a>
+      <p> Bem-Vindo (a) !
+        <br>Aluno (a): Bruna Leticia Silva </br>
+            Matricula: 801322
+        <br> Curso: Sistemas de Informação</br>
+        </p>
+      <div class="d-none d-sm-block">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button class="btn btn-outline-info" type="submit"> Pesquisar </button>
+        </form>
+      </div>
+
+      <div class="col-12 col-md-3 col-sm-1">
+
+        <div class="navbar navbar-expand-lg">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"> Minha conta </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Registrar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favoritos</a>
+              </li>
+            </ul>
+                <a class="nav-link" href="#">
+                  <img src="img/MicrosoftTeams-image-removebg-preview.png" alt="Carrinho" width="50px" />
+      
+            
+          </div>
+        </div>
+       
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fim da barra de navegação superior-->
+
+ 
+
+  <!-- Forumário e Carrossel -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3 p-2  border mt-4 ">
+        <form>
+          <h6> Buscar </h6>
+          <span>Encontre os produtos que você deseja pelo melhor preço </span>
+          <div class="form-group pt-2">
+            <label for="selectTiposGuitar">Tipos</label>
+            <select class="form-control" id="selectTiposGuitar">
+              <option></option>
+              <option> electronics </option>
+              <option> jewelery </option>
+              <option> men's clothing </option>
+              <option> women's clothing </option>
+            </select>
+          </div>
+          
+
+          <div class="row pt-2 pb-2">
+            <span> Faixa de preço </span>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="De">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Até">
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary"> Buscar</button>
+        </form>
+      </div>
+
+      <div class="col-12 col-md-8 mt-6">
+        <div class="row">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <br>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/pexels-lumn-322207.jpg" class="d-block w-100" alt="Guitar1">
+              </div>
+              <div class="carousel-item">
+                <img src="img/pexels-tembela-bohle-1884584.jpg" class="d-block w-100" alt="Guitar2">
+              </div>
+              <div class="carousel-item">
+                <img src="img/pexels-pavel-danilyuk-6461325.jpg" class="d-block w-100" alt="Guitar3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- Seção principal - fotos com barra lateral -->
+  <main class="container mt-2">
+    <div class="row">
+      <!-- Produtos -->
+      <div class="col-9 flex" id="tela">
+
+      </div>
+
+      <!-- Mais vistos-->
+      
+      <div class="col-3">
+        <h3> Melhores avaliados</h3>
+        
+          <div class="row text-center bg-light" id="tela">
+            <ul class="list-group list-group-flush">
+              <div id="maisvendidos">
+
+              </div>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+  </main>
+<br>
+
+<!--Fique por dentro das novidades -->
+<section class="subscribe-area pb-50 pt-70">
+  <div class="container">
+  <div class="row">
+
+               <div class="col-md-4">
+                   <div class="subscribe-text mb-15">
+                       <span>Fique por dentro das novidades </span>
+                       <h2>Cadastre-se e receba até
+                           15% de desconto!</h2>
+                   </div>
+               </div>
+               <div class="col-md-8">
+                   <div class="subscribe-wrapper subscribe2-wrapper mb-15">
+                       <div class="subscribe-form">
+                           <form action="#">
+                               <input placeholder="Digite seu e-mail" type="email">
+                               <button> Cadastrar  <i class="fas fa-long-arrow-alt-right"></i></button>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+  
+  </div>
+  </section>
+   <!--Fique por dentro das novidades fim -->
+ <!-- Rodapé - início-->
+ <footer>
+   
+  <div class="contact-info">
+    <p>Entre em contato:</p>
+    <p>Email: contato@pucminas.com</p>
+    <p>Telefone: (31) 90000-0000</p>
+  </div>
+  <div class="container">
+    <!-- Restante do código... -->
+    <div class="social-media">
+      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <!-- Outros ícones de redes sociais -->
+    </div>
+  <div class="container">
+    <!-- Restante do código... -->
+    <div class="payment-methods">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-paypal"></i>
+    
+    </div>
+  </div>
+</div>
+<div class="copyright">
+  <p class="text-center">Copyright @2023 | Designed With by <a href="#"> Rando Finds </a></p>
+</div>
+</footer>
+  <script src="script.js"></script>
+ 
+</body>
+
+</html>

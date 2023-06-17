@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-light" style="background-color:  #5fabde 80% ">
@@ -63,6 +65,25 @@
       </nav>
 
   <div id="telapesquisa"></div>  
+  <div class="container">
+    <div>
+      <h2>Informe o que está procurando </h2>
+    </div>
+
+    <div class="input-group">
+      <input id="palavra" type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Pesquisar"
+        aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary" onclick="pesquisar_produto()"> Pesquisar </button>
+    </div>
+  </div>
+
+  
+    <main class="container mt-2">
+      <div class="row">
+        <!-- Produtos -->
+        <div class="col-9 flex" id="tela_pesquisa">
+  </div>
+
   
   <script src="pesquisa.js"></script>
 </body>
